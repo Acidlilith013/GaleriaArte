@@ -1,4 +1,4 @@
-export default function Picture({ pictureProp }) {
+function Picture({ pictureProp }) {
     const { id, name, image, description } = pictureProp;
 
     return (
@@ -12,4 +12,4 @@ export default function Picture({ pictureProp }) {
     )
 }
 
-
+export default Picture
