@@ -1,4 +1,5 @@
 import Picture from "../components/Picture"
+
 function Exposicion() {
     return (
         <div>
