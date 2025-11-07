@@ -2,11 +2,17 @@ import { Link, Outlet } from "react-router-dom"
 
 function Navbar() {
 
-    return (
-        <> <Link to='/home'>Home</Link> | <Link to='/artistas'>Artistas</Link> | <Link to='/exposicion'>Exposicion</Link> | <Link to='/galeria'>Galeria</Link>  |
-            <Link to='/servicios'>Servicios</Link>
-        </>
-    )
+    const linkList = [
+        { to: "/home", label: "Home" },
+        { to: "/artistas", label: "Artistas" },
+        { to: "/exposicion", label: "Exposición" },
+        { to: "/galeria", label: "Galería " },
+        { to: "/servicios", label: "Servicios" },
+    ]
+
+    return (<div className="navbar">
+        {linkList.map((link, index) => { return <Link to={link.to}>{link.label} {linkList.length !== index + 1 && " | "} </Link > })}
+    </div>)
 }
 
 export default Navbar
