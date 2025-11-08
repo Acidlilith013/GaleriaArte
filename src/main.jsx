@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Servicios from './pages/Servicios.jsx'
-import Exposicion from './pages/Exposicion.jsx'
+import Exposicion from './pages/Exposiciones.jsx'
 import Artistas from './pages/Artistas.jsx'
 import Home from './pages/Home.jsx'
 import Gallery from './pages/Gallery.jsx'
@@ -17,23 +17,23 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/home',
-        element: <Home/>
+        element: <Home />
       },
       {
         path: '/artistas',
-        element: <Artistas/>,
+        element: <Artistas />,
       },
       {
         path: '/exposicion',
-        element: <Exposicion/>,
+        element: <Exposicion />,
       },
       {
         path: '/gallery',
-        element: <Gallery/>
+        element: <Gallery />
       },
       {
         path: '/servicios',
-        element: <Servicios/>,
+        element: <Servicios />,
       },
     ]
   }

@@ -6,7 +6,7 @@ function Picture({ pictureProp }) {
             <h1>IMÁGENES</h1>
             <p>{id}</p>
             <p>{name}</p>
-            <p>{image}</p>
+            <img src={image} alt="cuadro" />
             <p>{description}</p>
         </div>
     )
