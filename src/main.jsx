@@ -5,10 +5,10 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Servicios from './pages/Servicios.jsx'
-import Galeria from './pages/Galeria.jsx'
 import Exposicion from './pages/Exposicion.jsx'
 import Artistas from './pages/Artistas.jsx'
 import Home from './pages/Home.jsx'
+import Gallery from './pages/Gallery.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <Exposicion/>,
       },
       {
-        path: '/galeria',
-        element: <Galeria/>
+        path: '/gallery',
+        element: <Gallery/>
       },
       {
         path: '/servicios',

@@ -2,11 +2,10 @@ export default function Room({ roomProp }) {
     const { id, name, image, description } = roomProp;
 
     return (
-        <div>
-            <h1>propiedades Galeria</h1>
+        <div className="room"> 
             <p>{id}</p>
             <p>{name}</p>
-            <p>{image}</p>
+            <img src={image} alt="" />
             <p>{description}</p>
         </div>
     )
