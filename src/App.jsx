@@ -4,11 +4,19 @@ import Navbar from "./components/Navbar"
 function App() {
 
 
+
   return (
-    <>
-      <Navbar/>
-      <Outlet />
-    </>
+    <div className="app-wrap">
+      <Navbar />
+      <main className="app-main">
+        {<Outlet/>}
+      </main>
+    </div>
+
+    // <>
+    //   <Navbar/>
+    //   <Outlet />
+    // </>
   )
 }
 

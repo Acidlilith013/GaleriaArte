@@ -10,9 +10,24 @@ function Navbar() {
         { to: "/servicios", label: "Servicios" },
     ]
 
-    return (<div className="navbar">
-        {linkList.map((link, index) => { return <Link to={link.to}>{link.label} {linkList.length !== index + 1 && " | "} </Link > })}
-    </div>)
+    return (
+        <nav className="navbar">
+            <div className="navbar-inner">
+                <div className="brand">Los 4 Apóstoles</div>
+                <div className="nav-links">
+                    {linkList.map((l) => (
+                        <Link key={l.to} to={l.to} className="nav-link">
+                            {l.label}
+                        </Link>
+                    ))}
+                </div>
+            </div>
+        </nav>
+    );
 }
+//     <div className="navbar">
+//         {linkList.map((link, index) => { return <Link to={link.to}>{link.label} {linkList.length !== index + 1 && " | "} </Link > })}
+//     </div>)
+// }
 
 export default Navbar
