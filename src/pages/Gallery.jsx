@@ -1,22 +1,20 @@
 import Room from "../components/Room";
 import dataGallery from "../data/dataGallery";
-import { useState } from "react";
-
 
 function Gallery() {
-    const [galleryState] = useState(dataGallery);
-
     return (
         <div className="galeria-wrap">
             <h1 className="galeria-title">Galería</h1>
             <div className="galeria-grid">
-                {galleryState.map((item) => (
+                {dataGallery.map(item => (
                     <Room key={item.id} roomProp={item} />
                 ))}
             </div>
         </div>
     );
 }
+export default Gallery;
+
 //     function Gallery () {
 //         const [galleryState, setGalleryState] = useState (dataGallery);
 
@@ -32,4 +30,4 @@ function Gallery() {
 //     </>
 // )
 // }
-export default Gallery
+// export default Gallery

@@ -1,10 +1,11 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import "./index.css";
 
-import { Link, Outlet } from "react-router-dom"
-import Navbar from "./components/Navbar"
+
+
+
 function App() {
-
-
-
   return (
     <div className="app-wrap">
       <Navbar />
@@ -12,12 +13,16 @@ function App() {
         {<Outlet/>}
       </main>
     </div>
-
-    // <>
-    //   <Navbar/>
-    //   <Outlet />
-    // </>
-  )
+  );
 }
+export default App;
 
-export default App
+
+// <>
+//   <Navbar />
+//   <Outlet />
+// </>
+//  )
+//  }
+
+// export default App */}
