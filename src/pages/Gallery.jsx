@@ -1,15 +1,38 @@
 import Room from "../components/Room";
 import dataGallery from "../data/dataGallery";
+import { useState } from "react";
 
 function Gallery() {
+    const [galleryState, setGalleryState] = useState(dataGallery)
+
+    const deleteCard = function(idDel) {
+        let index;
+        let copy = [...galleryState]
+
+        for(let i = 0; i < copy.length; i++) {
+            if (copy[i].id === idDel) {
+                index = i
+            }
+        }
+
+        if (index) {
+            copy.splice(index, 1)
+            setGalleryState(copy)
+        } 
+
+    }
+
+    
+
     return (
         <div className="galeria-wrap">
             <h1 className="galeria-title">Galería</h1>
             <div className="galeria-grid">
-                {dataGallery.map(item => (
-                    <Room key={item.id} roomProp={item} />
+                {galleryState.map(item => (
+                    <Room key={item.id} roomProp={item} onDelete={deleteCard}/>
                 ))}
             </div>
+           
         </div>
     );
 }

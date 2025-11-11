@@ -54,10 +54,12 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 64px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-content: space-between;
+    padding: 0px 16px;
     background: rgba(255, 255, 255, .85);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(0, 0, 0, .06);
@@ -66,11 +68,11 @@ body {
 
 .navbar-inner {
     width: 100%;
-    max-width: 1100px;
+    max-width: 250px;
     padding: 0 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .brand {
@@ -110,7 +112,10 @@ body {
     border-color: rgba(37, 99, 235, .45);
     color: var(--brand);
 }
-
+.imglogo {
+    height: 80px;
+    width: auto ;
+}
 
 
 /*JAVI------------------------------------------------------------------*/
@@ -143,6 +148,7 @@ body {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+    height: 280px;
 }
 
 .room-image-wrap {
