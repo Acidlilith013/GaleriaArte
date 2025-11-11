@@ -9,6 +9,7 @@ function Exposicion() {
         <>
             <div>
                 <h1>Galería</h1>
+
                 {exposicionState.map((dataPictureSingle) => {
                     return <Picture
                         key={dataPictureSingle.id}

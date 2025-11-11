@@ -1,79 +1,88 @@
-/*JAVI*/
-
-/* app.css */
+/* app.css (tema claro) */
 :root {
-    --bg: #24355e;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --card: #111827;
-    --brand: #60a5fa;
-    --ring: rgba(96, 165, 250, .35);
-    --radius: 14px;
-    --shadow: 0 10px 25px rgba(0, 0, 0, .35);
+    --bg: #ffffff;
+    /* Fondo general */
+    --text: #111827;
+    /* Texto principal */
+    --muted: #6b7280;
+    /* Texto secundario */
+    --card: #f9fafb;
+    /* Fondo de tarjetas */
+    --brand: #2563eb;
+    /* Color de marca (azul) */
+    --radius: 12px;
+    /* Radio de bordes */
+    --shadow: 0 6px 16px rgba(0, 0, 0, .08);
+    /* Sombra suave */
 }
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 body {
     margin: 0;
-    background: radial-gradient(1200px 800px at 20% 0%, #0b1223 0%, var(--bg) 60%, #0b1223 100%);
+    background: var(--bg);
     color: var(--text);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans", sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     line-height: 1.5;
 }
 
 .app-wrap {
     min-height: 100dvh;
+    /* Ocupa al menos la pantalla visible */
     display: flex;
     flex-direction: column;
 }
 
-/* Contenido con margen por navbar fijo */
 .app-main {
     width: 100%;
-    max-width: 1200px;
-    margin: 86px auto 40px;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 80px auto 32px;
+    /* Deja sitio al navbar fijo */
+    padding: 0 16px;
 }
 
 /* navbar.css */
 .navbar {
     position: fixed;
-    inset: 0 0 auto 0;
-    height: 64px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(121, 163, 255, 0.603);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    justify-content: space-between;
+    padding: 0px 16px;
+    background: rgba(255, 255, 255, .85);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0, 0, 0, .06);
     z-index: 50;
 }
 
 .navbar-inner {
     width: 100%;
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 250px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .brand {
     font-weight: 700;
-    letter-spacing: .4px;
+    letter-spacing: .3px;
 }
 
 .nav-links {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -87,62 +96,67 @@ body {
     font-weight: 500;
     border-radius: 10px;
     border: 1px solid transparent;
-    transition: all .18s ease;
+    transition: background .15s ease, border-color .15s ease, color .15s ease;
 }
 
 .nav-link:hover {
-    background: rgba(231, 231, 231, 0.39);
-    border-color: rgba(255, 255, 255, .12);
+    background: #eef2ff;
+    /* Azul muy claro al pasar */
+    border-color: rgba(37, 99, 235, .25);
+    /* Borde azul suave */
 }
 
 .nav-link.active {
-    background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
-    border-color: rgba(96, 165, 250, .45);
-    box-shadow: 0 0 0 3px var(--ring);
+    background: #e0e7ff;
+    /* Estado activo simple */
+    border-color: rgba(37, 99, 235, .45);
+    color: var(--brand);
+}
+.imglogo {
+    height: 80px;
+    width: auto ;
 }
 
+
+/*JAVI------------------------------------------------------------------*/
 /* gallery.css */
 .galeria-wrap {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 16px;
 }
 
 .galeria-title {
     font-size: clamp(28px, 3vw, 40px);
     text-align: center;
-    margin: 0 0 22px;
-    color: #e5e5e7;
+    margin: 0 0 18px;
+    color: #1f2937;
 }
 
-s .galeria-grid {
+.galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
     align-items: start;
 }
 
 /* room.css */
+
 .room-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
-    border: 1px solid rgba(255, 255, 255, .08);
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, .06);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-
-.room-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, .45);
-    border-color: rgba(96, 165, 250, .45);
+    height: 280px;
 }
 
 .room-image-wrap {
     position: relative;
     aspect-ratio: 16/10;
-    overflow: hidden;
-    background: #0b1223;
+    /* Mantiene proporción de cabecera */
+    background: #f3f4f6;
+    /* Color de fondo por si tarda la imagen */
 }
 
 .room-image {
@@ -150,22 +164,10 @@ s .galeria-grid {
     height: 100%;
     display: block;
     object-fit: cover;
-    transform: scale(1.02);
-    transition: transform .25s ease;
-}
-
-.room-card:hover .room-image {
-    transform: scale(1.06);
-}
-
-.room-accent {
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--brand), transparent);
-    box-shadow: 0 0 0 1px rgba(96, 165, 250, .15), 0 6px 16px var(--ring);
 }
 
 .room-body {
-    padding: 14px 16px 16px;
+    padding: 12px 14px 14px;
 }
 
 .room-name {
@@ -180,8 +182,29 @@ s .galeria-grid {
     font-size: 14.5px;
 }
 
-/* Variante para ver el cuadro completo sin recorte */
-.room-image.contain {
-    object-fit: contain;
-    background: #0b1223;
-}
+
+
+/*PEPI---------------------------------------------------------------------------/
+
+
+
+
+
+
+
+
+
+
+/*NURIA------------------------------------------------------------------------------/
+
+
+
+
+
+
+
+
+
+
+/*JESÚS---------------------------------------------------------------------------------/
+

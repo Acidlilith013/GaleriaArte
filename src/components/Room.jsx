@@ -1,31 +1,34 @@
-export default function Room({ roomProp }) {
+export default function Room({ roomProp, onDelete }) {
     const { id, name, image, description } = roomProp;
 
     return (
-        <article className="room-card" role="group" aria-labelledby={`room-${id}-title`}>
+        <article className="room-card" >
             <div className="room-image-wrap">
                 <img
                     className="room-image"
                     src={image}
                     alt={name}
                     loading="lazy"
-                    width="1600"
-                    height="1000"
+                 
                 />
             </div>
-            <div className="room-accent" />
             <div className="room-body">
-                <h2 id={`room-${id}-title`} className="room-name">{name}</h2>
+                <h2 className="room-name">{name}</h2>
                 <p className="room-desc">{description}</p>
             </div>
+             <button onClick={() => onDelete(id)}>Eliminar</button>
         </article>
+    );
+}
+
+
         // <div className="room"> 
         //     <p>{id}</p>
         //     <p>{name}</p>
         //     <img src={image} alt="" />
         //     <p>{description}</p>
         // </div>
-    )
-}
+//     )
+// }
 
 
