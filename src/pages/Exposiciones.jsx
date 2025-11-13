@@ -6,8 +6,8 @@ function Exposicion() {
     const [exposicionState, setExposicionState] = useState(dataPicture);
 
     return (
-        <>
-            <div>
+       
+            <div className="main-exposiciones">
                 <h1>Galería</h1>
 
                 {exposicionState.map((dataPictureSingle) => {
@@ -16,7 +16,7 @@ function Exposicion() {
                         pictureProp={dataPictureSingle} />
                 })}
             </div>
-        </>
+    
     )
 }
 export default Exposicion

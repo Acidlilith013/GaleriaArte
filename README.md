@@ -11,11 +11,12 @@ Es un espacio dedicado a  exhibir y promover obras visuales, pinturas, escultura
         size: number
     }
     
-- Artist {
+- Artist(aqui van todos los artistas)(NURIA) {
         id: number, 
         name: string,
         description:string, 
         age: number
+        image: string
     }
 - Exposicion(aqui se van a mostrar todas las obras) (Pepi)
     - Pictures {}
