@@ -32,7 +32,7 @@ const dataPicture=[
     image: "src/img/Pepi/Image20251108131014.jpg",
     description: "Representación dramática y detallada de la espuma de las olas rompiendo."
   },
-  { 
+  {   
     id: 5,
     name: "Un sendero en el bosque",
     autor: "Julian Rix",
