@@ -5,10 +5,12 @@ import { useState } from "react";
 function Gallery() {
     const [galleryState, setGalleryState] = useState(dataGallery)
 
+//variable para borrar elemento
     const deleteCard = function(idDel) {
         let index;
-        let copy = [...galleryState]
+        let copy = [...galleryState]//crea copia galleryState
 
+        //creamos un bucle de la longitud de copy e incrementamos 1
         for(let i = 0; i < copy.length; i++) {
             if (copy[i].id === idDel) {
                 index = i
@@ -26,7 +28,7 @@ function Gallery() {
 
     return (
         <div className="galeria-wrap">
-            <h1 className="galeria-title">Galería</h1>
+            <h1 className="galeria-title">Salas de Exposición</h1>
             <div className="galeria-grid">
                 {galleryState.map(item => (
                     <Room key={item.id} roomProp={item} onDelete={deleteCard}/>
