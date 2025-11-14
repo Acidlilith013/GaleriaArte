@@ -5,36 +5,36 @@ import { useState } from "react";
 function Gallery() {
     const [galleryState, setGalleryState] = useState(dataGallery)
 
-//variable para borrar elemento
-    const deleteCard = function(idDel) {
-        let index;
+    //variable para borrar elemento
+    const deleteCard = function (idDel) {
+        let index; //variable para meter datos 
         let copy = [...galleryState]//crea copia galleryState
 
         //creamos un bucle de la longitud de copy e incrementamos 1
-        for(let i = 0; i < copy.length; i++) {
-            if (copy[i].id === idDel) {
-                index = i
+        for (let i = 0; i < copy.length; i++) {
+            if (copy[i].id === idDel) { //si el id  del elemento del array es igual a el id pasado por parametros(idDel)
+                index = i //guardo el valor i en index
             }
         }
 
-        if (index) {
-            copy.splice(index, 1)
-            setGalleryState(copy)
-        } 
+        if (index) {  //si tengo index es que he encontrado el elemento
+            copy.splice(index, 1) // va a eliminar en la posicion del index un elemento
+            setGalleryState(copy) // asigno copy a setGalleryState con el elemento eliminado
+        }
 
     }
 
-    
+
 
     return (
         <div className="galeria-wrap">
             <h1 className="galeria-title">Salas de Exposición</h1>
             <div className="galeria-grid">
                 {galleryState.map(item => (
-                    <Room key={item.id} roomProp={item} onDelete={deleteCard}/>
+                    <Room key={item.id} roomProp={item} onDelete={deleteCard} />
                 ))}
             </div>
-           
+
         </div>
     );
 }

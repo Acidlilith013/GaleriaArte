@@ -9,25 +9,25 @@ export default function Room({ roomProp, onDelete }) {
                     src={image}
                     alt={name}
                     loading="lazy"
-                 
+
                 />
             </div>
             <div className="room-body">
                 <h2 className="room-name">{name}</h2>
                 <p className="room-desc">{description}</p>
             </div>
-             <button onClick={() => onDelete(id)}>Eliminar</button>
+            <button onClick={() => onDelete(id)}>Eliminar</button>
         </article>
     );
 }
 
 
-        // <div className="room"> 
-        //     <p>{id}</p>
-        //     <p>{name}</p>
-        //     <img src={image} alt="" />
-        //     <p>{description}</p>
-        // </div>
+// <div className="room">
+//     <p>{id}</p>
+//     <p>{name}</p>
+//     <img src={image} alt="" />
+//     <p>{description}</p>
+// </div>
 //     )
 // }
 
