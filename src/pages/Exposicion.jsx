@@ -4,9 +4,10 @@ import { useState } from "react";
 
 function Exposicion() {
     const [picturesState, setPicturesState] = useState(dataPicture)
+    console.log (picturesState)
     //variable para borrar elemento
     const deletePicture = (idDelPict) => {
-        let index; //variable para meter datos 
+        let index = -1 ; //variable para meter datos 
         let copy = [...picturesState] //crea copia galleryState
 
         //creamos un bucle de la longitud de copy e incrementamos 1
@@ -15,9 +16,11 @@ function Exposicion() {
                 index = i; //guardo el valor i en index
         }
 
-        if (index) {  //si tengo index es que he encontrado el elemento
+        if (index !== -1) {  //si tengo index es que he encontrado el elemento
             copy.splice(index, 1) // va a eliminar en la posicion del index un elemento
+            console.log (copy)
             setPicturesState(copy) // asigno copy a setGalleryState con el elemento eliminado
+            console.log (picturesState)
         }
     }
     return (
@@ -27,7 +30,7 @@ function Exposicion() {
                 return <Picture
                     key={dataPictureSingle.id}
                     pictureProp={dataPictureSingle}
-                    ondelete={deletePicture} />
+                    onDelete={deletePicture} />
             })}
         </div>
     );

@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 function Picture({ pictureProp, onDelete }) {
     const { id, name, image, description } = pictureProp;
+
+    const [show, setShow] = useState(true)
 
     return (
         <div className="card-picture">
@@ -10,7 +14,8 @@ function Picture({ pictureProp, onDelete }) {
                 <img className="img-picture" src={image} alt="cuadro" />
                 <p>{description}</p>
             </div>
-            <button onClick={() => onDelete(id)}>Eliminar</button>
+            {show && <button onClick={() => onDelete(id)}>Eliminar</button>} {/* Renderizado condicional  */}
+            <button onClick={() => setShow(!show)}>Show</button>
         </div>
     )
 }

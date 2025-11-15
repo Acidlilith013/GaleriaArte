@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from 'react-router-dom'
 import Servicios from './pages/Servicios.jsx'
-import Exposicion from './pages/Exposiciones.jsx'
+import Exposicion from './pages/Exposicion.jsx'
 import Artistas from './pages/Artistas.jsx'
 import Home from './pages/Home.jsx'
 import Gallery from './pages/Gallery.jsx'
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <Artistas />,
       },
       {
-        path: '/exposiciones',
+        path: '/exposicion',
         element: <Exposicion />,
       },
       {
