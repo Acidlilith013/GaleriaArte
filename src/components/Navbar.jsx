@@ -4,7 +4,7 @@ function Navbar() {
     const linkList = [
         { to: "/home", label: "Home" },
         { to: "/artistas", label: "Artistas" },
-        { to: "/exposicion", label: "Exposición" },
+        { to: "/exposiciones", label: "Exposición" },
         { to: "/gallery", label: "Galería" },
         { to: "/servicios", label: "Servicios" },
     ];
