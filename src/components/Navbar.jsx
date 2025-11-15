@@ -12,16 +12,19 @@ function Navbar() {
     return (
         <nav className="navbar">
             {/* <div className="navbar-inner"> */}
-                
-                <div className="navbar-inner"><img className="imglogo" src="src/img/JV/los 4 apostoles logo.png"  alt="" /><div className="brand">Los 4 Apóstoles</div></div>
-                
-                <div className="nav-links">
-                    {linkList.map(l => (
-                        <Link key={l.to} to={l.to} className="nav-link">
-                            {l.label}
-                        </Link>
-                    ))}
-                </div>
+
+            <div className="navbar-inner">
+                <img className="imglogo" src="src/img/JV/los 4 apostoles logo.png" alt="" />
+                <div className="brand">Los 4 Apóstoles</div>
+            </div>
+
+            <div className="nav-links">
+                {linkList.map(l => (
+                    <Link key={l.to} to={l.to} className="nav-link">
+                        {l.label}
+                    </Link>
+                ))}
+            </div>
             {/* </div> */}
         </nav>
     );
