@@ -5,13 +5,13 @@ import { useState } from "react";
 function Exposicion() {
     const [picturesState, setPicturesState] = useState(dataPicture);
     //variable para borrar elemento
-    const deletepicture = (idDelPict){
+    const deletePicture = (idDelPict)=>{ 
         let index; //variable para meter datos 
         let copy = [...picturesState] //crea copia galleryState
 
         //creamos un bucle de la longitud de copy e incrementamos 1
-        for (let i = 0; i < copy.length, i++) {
-            if (copy[i].id === idDelPict) { //si el id  del elemento del array es igual a el id pasado por parametros(idDel)
+        for (let i = 0; i < copy.length; i++) {
+            if (copy[i].id === idDelPict)  //si el id  del elemento del array es igual a el id pasado por parametros(idDel)
                 index = i; //guardo el valor i en index
             }
         }
@@ -22,18 +22,18 @@ function Exposicion() {
     }
 
     return (
-
-
         <div className="main-exposiciones">
             <h1>Galería</h1>
 
             {picturesState.map((dataPictureSingle) => {
                 return <Picture
                     key={dataPictureSingle.id}
-                    pictureProp={dataPictureSingle} />
+                    pictureProp={dataPictureSingle}
+                    ondelete ={deletePicture} />
             })}
         </div>
+    );
 
-    )
-}
+
+
 export default Exposicion
