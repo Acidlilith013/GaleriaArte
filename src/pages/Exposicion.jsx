@@ -4,10 +4,10 @@ import { useState } from "react";
 
 function Exposicion() {
     const [picturesState, setPicturesState] = useState(dataPicture)
-    console.log (picturesState)
+    console.log(picturesState)
     //variable para borrar elemento
     const deletePicture = (idDelPict) => {
-        let index = -1 ; //variable para meter datos 
+        let index = -1; //variable para meter datos 
         let copy = [...picturesState] //crea copia galleryState
 
         //creamos un bucle de la longitud de copy e incrementamos 1
@@ -18,24 +18,29 @@ function Exposicion() {
 
         if (index !== -1) {  //si tengo index es que he encontrado el elemento
             copy.splice(index, 1) // va a eliminar en la posicion del index un elemento
-            console.log (copy)
+            console.log(copy)
             setPicturesState(copy) // asigno copy a setGalleryState con el elemento eliminado
-            console.log (picturesState)
+            console.log(picturesState)
         }
     }
     return (
         <div className="main-exposiciones">
             <h1>Pictures</h1>
-            {picturesState.map((dataPictureSingle) => {
-                return <Picture
-                    key={dataPictureSingle.id}
-                    pictureProp={dataPictureSingle}
-                    onDelete={deletePicture} />
-            })}
+            <div className="picture-grid">
+                {picturesState.map((dataPictureSingle) => {
+                    return <Picture
+                        key={dataPictureSingle.id}
+                        pictureProp={dataPictureSingle}
+                        onDelete={deletePicture} />
+                })}
+            </div>
         </div>
-    );
+
+    )
+
+
 }
 
 
 
-    export default Exposicion
+export default Exposicion

@@ -3,41 +3,89 @@ const dataPicture=[
   {
     id: 1,
     name: "Arboleda en otoño",
-    autor: "John Atkinson Grimshaw",
-    año: 1878,
-    image: "src/img/Pepi/Image20251108130306.png",
+    autor: "Ana Barriga",
+    año: 2014,
+    image: "src/img/Pepi/ana-barriga1.jpg",
     description: "Una escena boscosa iluminada por el atardecer, con colores cálidos."
   },
   {
     id: 2,
     name: "Paisaje invernal con iglesia",
-    autor: "Barend Cornelis Koekkoek",
-    año: 1850,
-    image: "src/img/Pepi/Image20251108130951.png",
+    autor: "Ana Barriga",
+    año:2020,
+    image: "src/img/Pepi/ana-barriga2.jpg",
     description: "Una aldea bajo la nieve, con una iglesia destacando en el centro."
   },
   {
     id: 3,
     name: "Molino de viento a orillas de un canal",
-    autor: "George Henry Boughton",
-    año: 1888,
-    image: "src/img/Pepi/Image20251108130958.png",
+    autor: "Ana Barriga",
+    año: 2023,
+    image: "src/img/Pepi/ana-barriga3.jpg",
     description: "Molino de viento cerca del agua con una atmósfera tranquila y nublada."
   },
   {
     id: 4,
     name: "Estudio de las olas del mar",
-    autor: "Gustave Courbet",
-    año: 1869,
-    image: "src/img/Pepi/Image20251108131014.jpg",
+    autor: "Felipe Pantone",
+    año: 2024,
+    image: "src/img/Pepi/felipe-pantone1.jpg",
     description: "Representación dramática y detallada de la espuma de las olas rompiendo."
   },
   {   
     id: 5,
     name: "Un sendero en el bosque",
-    autor: "Julian Rix",
-    año: 1890,
-    image: "src/img/Pepi/Image20251108131153.png",
+    autor:  "Felipe Pantone",
+    año: 2019,
+    image: "src/img/Pepi/felipe-pantone2.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+  {   
+    id: 6,
+    name: "Un sendero en el bosque",
+    autor:  "Felipe Pantone",
+    año: 2023,
+    image: "src/img/Pepi/felipe-pantone3.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+  {   
+    id: 7,
+    name: "Un sendero en el bosque",
+    autor:  "Okuda San Miguel",
+    año: 2017,
+    image: "src/img/Pepi/okuda-san-miguel 2.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+  {   
+    id: 8,
+    name: "Un sendero en el bosque",
+    autor:  "Okuda San Miguel",
+    año: 2014,
+    image: "src/img/Pepi/okuda-san-miguel 3.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+{   
+    id: 9,
+    name: "Un sendero en el bosque",
+    autor:  "Spok Brillor",
+    año: 2014,
+    image: "src/img/Pepi/okuda-san-miguel 3.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+  {
+    id: 10,
+    name: "Un sendero en el bosque",
+    autor:  "Spok Brillor",
+    año: 2014,
+    image: "src/img/Pepi/okuda-san-miguel 3.jpg",
+    description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
+  },
+  {  
+    id: 11,
+    name: "Un sendero en el bosque",
+    autor:  "Spok Brillor",
+    año: 2014,
+    image: "src/img/Pepi/okuda-san-miguel 3.jpg",
     description: "Un camino serpenteante bajo la densa vegetación de un bosque, con luz filtrada."
   }
 ]
