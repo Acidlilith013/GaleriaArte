@@ -1,13 +1,13 @@
 import Room from "../components/Room";
 import dataGallery from "../data/dataGallery";
 import { useState } from "react";
+import CreateFormGallery from "../components/CreateFormGallery";
+
 
 function Gallery() {
     const [galleryState, setGalleryState] = useState(dataGallery)
 
-    const [nameGallery, setNameGallery] = useState("")
-    const [imageGallery, setImageGallery] = useState("")
-    const [descriptionGallery, setDescriptionGallery] = useState("")
+
 
     //variable para borrar elemento
     const deleteCard = function (idDel) {
@@ -30,20 +30,13 @@ function Gallery() {
 
     //funcion para añadir sala
 
-    function createNewRoom(event) {
-        event.preventDefault()           // previene que cuando se envia al pulsar boton se recargue la pagina
+    function createNewRoom(packageGallery) {
 
         let originalLenght = galleryState.length
-        const newRoom = {               //Creamos nueva imagen  con este bloque
-            id: ++originalLenght, //añadimo +1 al ultimo id
-            name: nameGallery,
-            image: imageGallery,
-            description: descriptionGallery
-        }
-        console.log(newRoom)
+        packageGallery.id = ++originalLenght //añadimo +1 al ultimo id
 
         let copy = [...galleryState]    //crea copia galleryState
-        copy.push(newRoom)              //metemos los datos nuevos en copy, lo nuevo es Newroom 
+        copy.push(packageGallery)              //metemos los datos nuevos en copy, lo nuevo es Newroom 
         setGalleryState(copy)           //Asignamos a setGallerystate el valor de copy
 
     }
@@ -58,32 +51,7 @@ function Gallery() {
                 ))}
 
             </div>
-            <div>
-                <form onSubmit={createNewRoom}>
-                    <div className="form">
-                        <label>Nombre de la Galería</label>
-                        <input
-
-                            value={nameGallery} onChange={(event) => { setNameGallery(event.target.value) }}
-                        />
-                    </div>
-                    <div className="form">
-                        <label>Imagen de la Galería</label>
-                        <input
-
-                            value={imageGallery} onChange={(event) => { setImageGallery(event.target.value) }}
-                        />
-                    </div>
-                    <div className="form">
-                        <label>Descripción de la Galería</label>
-                        <input
-
-                            value={descriptionGallery} onChange={(event) => { setDescriptionGallery(event.target.value) }}
-                        />
-                    </div>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
+            <CreateFormGallery createNewRoomProps={createNewRoom} />
         </div>
     );
 }
