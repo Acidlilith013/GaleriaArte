@@ -39,6 +39,11 @@ function Gallery() {
             description: descriptionGallery
         }
         console.log(newRoom)
+
+         let copy = [...galleryState]//crea copia galleryState
+         copy.push(newRoom)
+         setGalleryState (copy)
+
     } 
 
 
