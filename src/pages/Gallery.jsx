@@ -5,6 +5,10 @@ import { useState } from "react";
 function Gallery() {
     const [galleryState, setGalleryState] = useState(dataGallery)
 
+    const [nameGallery, setNameGallery] = useState("")
+    const [imageGallery, setImageGallery] = useState("")
+    const [descriptionGallery, setDescriptionGallery] = useState("")
+
     //variable para borrar elemento
     const deleteCard = function (idDel) {
         let index = -1; //variable para meter datos 
@@ -24,6 +28,18 @@ function Gallery() {
 
     }
 
+//funcion para añadir sala
+
+    function createNewRoom (event){
+        event.preventDefault()
+        const newRoom = {
+            id:6,
+            name: nameGallery,
+            image:imageGallery,
+            description: descriptionGallery
+        }
+        console.log(newRoom)
+    } 
 
 
     return (
@@ -33,8 +49,34 @@ function Gallery() {
                 {galleryState.map(item => (
                     <Room key={item.id} roomProp={item} onDelete={deleteCard} />
                 ))}
-            </div>
 
+            </div>
+            <div>
+                <form onSubmit={createNewRoom}>
+                    <div className="form">
+                        <label>Nombre de la Galería</label>
+                        <input
+
+                            value={nameGallery} onChange={(event) => {setNameGallery(event.target.value)}}
+                        />
+                    </div>
+                    <div className="form">
+                        <label>Imagen de la Galería</label>
+                        <input
+
+                            value={imageGallery} onChange={(event) => {setImageGallery(event.target.value)}}
+                        />
+                    </div>
+                    <div className="form">
+                        <label>Descripción de la Galería</label>
+                        <input
+
+                            value={descriptionGallery} onChange={(event) => {setDescriptionGallery(event.target.value)}}
+                        />
+                    </div>
+                <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     );
 }
