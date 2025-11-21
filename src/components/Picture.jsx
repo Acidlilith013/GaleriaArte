@@ -11,6 +11,7 @@ function Picture({ pictureProp, onDelete }) {
                 <h1>IMÁGENES</h1>
                 <p>{id}</p>
                 <p>{name}</p>
+                <p>{autor}</p>
                 <img className="img-picture" src={image} alt="cuadro" />
                 <p>{description}</p>
             </div>
