@@ -7,7 +7,7 @@ function Gallery() {
 
     //variable para borrar elemento
     const deleteCard = function (idDel) {
-        let index; //variable para meter datos 
+        let index = -1; //variable para meter datos 
         let copy = [...galleryState]//crea copia galleryState
 
         //creamos un bucle de la longitud de copy e incrementamos 1
@@ -17,7 +17,7 @@ function Gallery() {
             }
         }
 
-        if (index) {  //si tengo index es que he encontrado el elemento
+        if (index !== -1) {  //si tengo index es que he encontrado el elemento
             copy.splice(index, 1) // va a eliminar en la posicion del index un elemento
             setGalleryState(copy) // asigno copy a setGalleryState con el elemento eliminado
         }

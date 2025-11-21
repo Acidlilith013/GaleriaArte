@@ -12,10 +12,10 @@ export default function Room({ roomProp, onDelete }) {
 
                 />
             </div>
-            <iv className="room-body">
+            <div className="room-body">
                 <h2 className="room-name">{name}</h2>
                 <p className="room-desc">{description}</p>
-            </iv>
+            </div>
             <button onClick={() => onDelete(id)}>Eliminar</button>
         </article>
     );
