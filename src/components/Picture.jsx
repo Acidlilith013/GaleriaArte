@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Picture({ pictureProp, onDelete }) {
-    const { id, name, image, description } = pictureProp;
+    const { id, name, autor, image, description } = pictureProp;
 
     const [show, setShow] = useState(true)
 
