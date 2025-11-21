@@ -18,7 +18,11 @@ function Picture({ pictureProp, onDelete }) {
             {show && <button onClick={() => onDelete(id)}>Eliminar</button>} {/* Renderizado condicional  */}
             <button onClick={() => setShow(!show)}>Show</button>
         </div>
+    
     )
+
+
+
 }
 
 export default Picture
