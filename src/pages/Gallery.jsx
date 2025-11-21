@@ -28,23 +28,25 @@ function Gallery() {
 
     }
 
-//funcion para añadir sala
+    //funcion para añadir sala
 
-    function createNewRoom (event){
-        event.preventDefault()
-        const newRoom = {
-            id:6,
+    function createNewRoom(event) {
+        event.preventDefault()           // previene que cuando se envia al pulsar boton se recargue la pagina
+
+        let originalLenght = galleryState.length
+        const newRoom = {               //Creamos nueva imagen  con este bloque
+            id: ++originalLenght, //añadimo +1 al ultimo id
             name: nameGallery,
-            image:imageGallery,
+            image: imageGallery,
             description: descriptionGallery
         }
         console.log(newRoom)
 
-         let copy = [...galleryState]//crea copia galleryState
-         copy.push(newRoom)
-         setGalleryState (copy)
+        let copy = [...galleryState]    //crea copia galleryState
+        copy.push(newRoom)              //metemos los datos nuevos en copy, lo nuevo es Newroom 
+        setGalleryState(copy)           //Asignamos a setGallerystate el valor de copy
 
-    } 
+    }
 
 
     return (
@@ -62,24 +64,24 @@ function Gallery() {
                         <label>Nombre de la Galería</label>
                         <input
 
-                            value={nameGallery} onChange={(event) => {setNameGallery(event.target.value)}}
+                            value={nameGallery} onChange={(event) => { setNameGallery(event.target.value) }}
                         />
                     </div>
                     <div className="form">
                         <label>Imagen de la Galería</label>
                         <input
 
-                            value={imageGallery} onChange={(event) => {setImageGallery(event.target.value)}}
+                            value={imageGallery} onChange={(event) => { setImageGallery(event.target.value) }}
                         />
                     </div>
                     <div className="form">
                         <label>Descripción de la Galería</label>
                         <input
 
-                            value={descriptionGallery} onChange={(event) => {setDescriptionGallery(event.target.value)}}
+                            value={descriptionGallery} onChange={(event) => { setDescriptionGallery(event.target.value) }}
                         />
                     </div>
-                <button type="submit">Enviar</button>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
         </div>
