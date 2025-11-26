@@ -1,11 +1,10 @@
 import { useState } from "react";
 
+function UpdateFormGallery({ updateNewRoomProps, oldRoomProps }) {
 
-function CreateFormGallery({ createNewRoomProps }) {
-
-    const [nameGallery, setNameGallery] = useState("")
-    const [imageGallery, setImageGallery] = useState("")
-    const [descriptionGallery, setDescriptionGallery] = useState("")
+    const [nameGallery, setNameGallery] = useState(oldRoomProps.name)
+    const [imageGallery, setImageGallery] = useState(oldRoomProps.image)
+    const [descriptionGallery, setDescriptionGallery] = useState(oldRoomProps.description)
 
     function sendFormGallery(event) {
         event.preventDefault()           // previene que cuando se envia al pulsar boton se recargue la pagina
@@ -15,7 +14,7 @@ function CreateFormGallery({ createNewRoomProps }) {
             image: imageGallery,
             description: descriptionGallery
         }
-        createNewRoomProps(packageGallery)
+        updateNewRoomProps(updateIdRoom, packageGallery)
     }
     return (
 
@@ -49,4 +48,4 @@ function CreateFormGallery({ createNewRoomProps }) {
     )
 }
 
-export default CreateFormGallery
+export default UpdateFormGallery

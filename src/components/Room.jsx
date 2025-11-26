@@ -1,4 +1,4 @@
-export default function Room({ roomProp, onDelete }) {
+export default function Room({ roomProp, onDelete, onUpdate}) {
     const { id, name, image, description } = roomProp;
 
     return (
@@ -17,6 +17,8 @@ export default function Room({ roomProp, onDelete }) {
                 <p className="room-desc">{description}</p>
             </div>
             <button onClick={() => onDelete(id)}>Eliminar</button>
+            <button onClick={() => onUpdate(roomProp)}>Actualizar Room</button>
+
         </article>
     );
 }
