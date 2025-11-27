@@ -68,7 +68,7 @@ function Gallery() {
                 ))}
 
             </div>
-            {/* <CreateFormGallery createNewRoomProps={createNewRoom} /> */}
+            <CreateFormGallery createNewRoomProps={createNewRoom} />
             <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate} />
         </div>
     );
