@@ -32,7 +32,7 @@ function CreateFormGallery({ createNewRoomProps }) {
                     <label>Imagen de la Galería</label>
                     <input
 
-                        value={imageGallery} onChange={(event) => { setImageGalestalery(event.target.value) }}
+                        value={imageGallery} onChange={(event) => { setImageGallery(event.target.value) }}
                     />
                 </div>
                 <div className="form">
