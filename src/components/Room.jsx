@@ -1,6 +1,7 @@
 export default function Room({ roomProp, onDelete, onUpdate}) {
     const { id, name, image, description } = roomProp;
 
+    
     return (
         <article className="room-card" >
             <div className="room-image-wrap">

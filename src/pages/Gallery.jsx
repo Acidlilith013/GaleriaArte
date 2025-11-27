@@ -4,9 +4,12 @@ import { useState } from "react";
 import CreateFormGallery from "../components/CreateFormGallery";
 import UpdateFormGallery from "../components/UpdateFormGallery";
 
+
 function Gallery() {
+    const [showFormCreate, setShowFormCreate] = useState(false)
+
     const [galleryState, setGalleryState] = useState(dataGallery)
-    const [roomUpdate, setRoomUpdate] = useState({ name: "", image: "", description: "" })
+    const [roomUpdate, setRoomUpdate] = useState(null)
     // console.log("roomupdate--------------", roomUpdate)
 
     //variable para borrar elemento
@@ -57,7 +60,7 @@ function Gallery() {
             // console.log("Paquete galery Splice---------------", copy)
             setGalleryState(copy) // asigno copy a setGalleryState con el elemento eliminado
         }
-
+setRoomUpdate(null)
     }
     return (
         <div className="galeria-wrap">
@@ -68,26 +71,13 @@ function Gallery() {
                 ))}
 
             </div>
-            <CreateFormGallery createNewRoomProps={createNewRoom} />
-            <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate} />
+            {showFormCreate && <CreateFormGallery createNewRoomProps={createNewRoom} />} {/* Renderizado condicional  */}
+            <button onClick={() => setShowFormCreate(!showFormCreate)}>{!showFormCreate ?"Crear Nueva Room":"Cerrar Formulario"}</button>
+            
+            {roomUpdate && <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate} />} {/* Renderizado condicional  */}
+            {/* <button onClick={() => setShowFormCreate(!showFormCreate)}>{!showFormCreate ?"Actualizar Room":"Cerrar Actualización"}</button> */}
         </div>
     );
 }
 export default Gallery;
 
-//     function Gallery () {
-//         const [galleryState, setGalleryState] = useState (dataGallery);
-
-//         return (
-//             <>
-//     <div>
-//         <h1>Galería</h1>
-//         {dataGallery.map((dataGallerySingle) => {
-//             return <Room roomProp={dataGallerySingle} />
-//         })}
-
-//     </div>
-//     </>
-// )
-// }
-// export default Gallery
