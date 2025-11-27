@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function UpdateFormGallery({ updateNewRoomProps, oldRoomProps }) {
 
-    const [nameGallery, setNameGallery] = useState(oldRoomProps.name)
-    const [imageGallery, setImageGallery] = useState(oldRoomProps.image)
-    const [descriptionGallery, setDescriptionGallery] = useState(oldRoomProps.description)
+    const [nameGallery, setNameGallery] = useState("")
+    const [imageGallery, setImageGallery] = useState("")
+    const [descriptionGallery, setDescriptionGallery] = useState("")
+    console.log("NameGallery------------", nameGallery)
+    console.log("oldRoomProps------------", oldRoomProps)
+
+    useEffect(() => {
+        setNameGallery(oldRoomProps.name)
+        setImageGallery(oldRoomProps.image)
+        setDescriptionGallery(oldRoomProps.description)
+        console.log("Cambio detectado")
+    }, [oldRoomProps])
 
     function sendFormGallery(event) {
         event.preventDefault()           // previene que cuando se envia al pulsar boton se recargue la pagina
 
         const packageGallery = {
+            id: oldRoomProps.id,
             name: nameGallery,
             image: imageGallery,
             description: descriptionGallery
         }
-        updateNewRoomProps(updateIdRoom, packageGallery)
+        updateNewRoomProps(oldRoomProps.id, packageGallery)
     }
     return (
 
@@ -31,7 +41,7 @@ function UpdateFormGallery({ updateNewRoomProps, oldRoomProps }) {
                     <label>Imagen de la Galería</label>
                     <input
 
-                        value={imageGallery} onChange={(event) => { setImageGalestalery(event.target.value) }}
+                        value={imageGallery} onChange={(event) => { setImageGallery(event.target.value) }}
                     />
                 </div>
                 <div className="form">

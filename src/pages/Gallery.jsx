@@ -6,8 +6,8 @@ import UpdateFormGallery from "../components/UpdateFormGallery";
 
 function Gallery() {
     const [galleryState, setGalleryState] = useState(dataGallery)
-    const [roomUpdate, setRoomUpdate] = useState({name: "", image:"", description: ""})
-
+    const [roomUpdate, setRoomUpdate] = useState({ name: "", image: "", description: "" })
+    // console.log("roomupdate--------------", roomUpdate)
 
     //variable para borrar elemento
     const deleteCard = function (idDel) {
@@ -41,7 +41,7 @@ function Gallery() {
 
     }
 
-    function updateRoom (updateIdRoom, packageGallery) {
+    function updateRoom(updateIdRoom, packageGallery) {
         let index = -1; //variable para meter datos 
         let copy = [...galleryState]//crea copia galleryState
 
@@ -54,6 +54,7 @@ function Gallery() {
 
         if (index !== -1) {  //si tengo index es que he encontrado el elemento
             copy.splice(index, 1, packageGallery) // va a eliminar en la posicion del index un elemento
+            // console.log("Paquete galery Splice---------------", copy)
             setGalleryState(copy) // asigno copy a setGalleryState con el elemento eliminado
         }
 
@@ -67,8 +68,8 @@ function Gallery() {
                 ))}
 
             </div>
-            <CreateFormGallery createNewRoomProps={createNewRoom} />
-            <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate}/>
+            {/* <CreateFormGallery createNewRoomProps={createNewRoom} /> */}
+            <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate} />
         </div>
     );
 }
