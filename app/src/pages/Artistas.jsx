@@ -1,15 +1,17 @@
 import Artist from "../components/Artist"
 import dataArtist from "../data/dataArtists"
 import { useState } from "react"
+import { useEffect } from "react";
+
 
 function Artistas() {
-    const [artistState, setArtistState] = useState([]);
-}
-useEffect(() => {
+    const [artistState, setArtistState] = useState(dataArtist);
+
+/* useEffect(() => {
     getPosts(dataArtist)
         .then((data) => setdataPicture(data))
         .catch((error) => console.error())
-})
+}) */
 
 const deleteArtist = (idDelArtist) => {
     let index = -1;
@@ -30,7 +32,7 @@ const deleteArtist = (idDelArtist) => {
 }
 
 return (
-    <div className="Artistas">
+    <div className="artist-page">
         <h1>Artistas</h1>
         {artistState.map((dataArtistSingle) => {
             return <Artist
@@ -41,6 +43,6 @@ return (
 
 
     </div>
-)
+)}
 
 export default Artistas
