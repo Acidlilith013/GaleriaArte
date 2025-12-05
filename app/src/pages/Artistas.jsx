@@ -3,14 +3,15 @@ import dataArtist from "../data/dataArtists"
 import { useState } from "react"
 import { useEffect } from "react";
 import CreateFormArtist from "../components/CreateFormArtist";
-
+import getDataArtist from "../logic/GetDataArtist";
+// este es el paso 3
 function Artistas() {
     const [artistState, setArtistState] = useState(dataArtist);
-    /* useEffect(() => {
-        getPosts(dataArtist)
-            .then((data) => setdataPicture(data))
+     useEffect(() => {
+        getDataArtist(dataArtist)
+            .then((data) => setArtistState(data))
             .catch((error) => console.error())
-    }) */
+    },[])
     //funcion para añadir picture
     function createNewArtist(packageArtist) {
         let originalLenght = artistState.length
