@@ -1,16 +1,25 @@
 import Room from "../components/Room";
 import dataGallery from "../data/dataGallery";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreateFormGallery from "../components/CreateFormGallery";
 import UpdateFormGallery from "../components/UpdateFormGallery";
+import getDataGallery from "../logic/getDataGallery";
 
 
 function Gallery() {
     const [showFormCreate, setShowFormCreate] = useState(false)
 
-    const [galleryState, setGalleryState] = useState(dataGallery)
+    const [galleryState, setGalleryState] = useState([])
     const [roomUpdate, setRoomUpdate] = useState(null)
     // console.log("roomupdate--------------", roomUpdate)
+
+
+    useEffect(() => {
+                // Llamamos a nuestra función de lógica
+        getDataGallery()
+            .then((data) => setGalleryState(data)) //guardamos los datos recibidos en el estado
+            .catch((error) => console.error("Error fetching posts:", error)); //mostramos el error
+    }, []);
 
     //variable para borrar elemento
     const deleteCard = function (idDel) {
@@ -60,7 +69,7 @@ function Gallery() {
             // console.log("Paquete galery Splice---------------", copy)
             setGalleryState(copy) // asigno copy a setGalleryState con el elemento eliminado
         }
-setRoomUpdate(null)
+        setRoomUpdate(null)
     }
     return (
         <div className="galeria-wrap">
@@ -72,8 +81,8 @@ setRoomUpdate(null)
 
             </div>
             {showFormCreate && <CreateFormGallery createNewRoomProps={createNewRoom} />} {/* Renderizado condicional  */}
-            <button onClick={() => setShowFormCreate(!showFormCreate)}>{!showFormCreate ?"Crear Nueva Room":"Cerrar Formulario"}</button>
-            
+            <button onClick={() => setShowFormCreate(!showFormCreate)}>{!showFormCreate ? "Crear Nueva Room" : "Cerrar Formulario"}</button>
+
             {roomUpdate && <UpdateFormGallery updateNewRoomProps={updateRoom} oldRoomProps={roomUpdate} />} {/* Renderizado condicional  */}
             {/* <button onClick={() => setShowFormCreate(!showFormCreate)}>{!showFormCreate ?"Actualizar Room":"Cerrar Actualización"}</button> */}
         </div>

@@ -1,14 +1,14 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "api",
+  "description": "Los 4 apostoles",
   "license": "ISC",
-  "author": "Nuria",
+  "author": "",
   "type": "module",
   "main": "index.js",
-
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,5 +16,8 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "mongoose": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

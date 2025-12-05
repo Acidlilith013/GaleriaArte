@@ -2,7 +2,7 @@ import Artist from "../components/Artist"
 import dataArtist from "../data/dataArtists"
 import { useState } from "react"
 import { useEffect } from "react";
-import CreateFormArtist from "../components/CreateFormArtist";
+//import CreateFormArtist from "../components/CreateFormArtist";
 import getDataArtist from "../logic/GetDataArtist";
 // este es el paso 3
 function Artistas() {
@@ -26,31 +26,28 @@ function Artistas() {
 
         for (let i = 0; i < copy.length; i++) {
             if (copy[i].id === idDeleteArtist) {
-                index = i;
+                index = i
             }
         }
-        if (index !== -1) {
+        if (index) {
             copy.splice(index, 1)
-            console.log(copy)
             setArtistState(copy)
-            console.log(artistState)
         }
 
     }
 
     return (
-        <div className="artist-page">
+        <div>
             <h1>Artistas</h1>
-            <div>
-                {artistState.map((dataArtistSingle) => {
-                    return <Artist
-                        key={dataArtistSingle.id}
-                        artistProp={dataArtistSingle}
-                        onDelete={deleteArtist} />
-                })}
-            </div>
-            <CreateFormArtist CreateNewArtistProps={createNewArtist} />
-            </div>
-             ); 
-}      
-  export default Artistas;
+            {artistState.map((dataArtistSingle) => {
+                return <Artist key={dataArtistSingle.id}
+                    artistProp={dataArtistSingle} onDelete={
+                        deleteArtist
+                    } />
+            })}
+
+
+        </div>
+    )
+}
+export default Artistas

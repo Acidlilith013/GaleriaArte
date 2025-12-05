@@ -1,4 +1,10 @@
+
+//1) componente hijo: Artist
+//  este componente solo recibe datos y presenta una tarjeta
+// cuando se pulsa eliminar avisa al padre con el id
+
 function Artist({ artistProp, onDelete }) {
+    //
     const { id, name, description, age, image } = artistProp;
     return (
         <div className="artist-card">
