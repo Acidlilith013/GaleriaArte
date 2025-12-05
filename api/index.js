@@ -1,18 +1,33 @@
 import cors from "cors";
 import express from "express";
-import dataArtist from "./artist.data.js";
+import dataGallery from "./data/gallery.data.js"
+/* 
+Nota: Usamos 'import' gracias a que configuramos "type": "module" 
+en package.json.
+Es la forma moderna de hacer: const express = require("express");
+*/
 
-const api = express();
-const PORT = 3000;
+console.log("Datos de posts cargados:", dataGallery);
+
+const api = express(); // Creamos la instancia de la aplicación Express
+const PORT = 3000;     // Definimos el puerto donde escuchará el servidor
+
+
+// Middleware: Permite que lleguen peticiones desde otros dominios (CORS)
+
 api.use(cors());
+
+// Ruta de prueba: Para verificar que el servidor responde
 api.get("/", (req, res) => {
-    res.send("los apostoles");
+    res.send("Hello World!");
 });
 
-api.get("/dataArtist", (req, res) => {
-    res.json(dataArtist);
-});
+// Ruta GET para obtener todas las publicaciones
 
+api.get("/dataGallery", (req, res) => {
+  res.json(dataGallery); // Respondemos enviando los datos como JSON
+});
+// Encendemos el servidor
 api.listen(PORT, () => {
-console.log(`API server running at http://localhost:${PORT}`);
+    console.log(`API server running at http://localhost:${PORT}`);
 });

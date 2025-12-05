@@ -1,6 +1,6 @@
-async function getDataArtist() {
+async function getDataGallery(){
   // Hacemos la petición a la URL de TU servidor local
-  return fetch("http://localhost:3000/dataArtist")
+  return fetch("http://localhost:3000/dataGallery")
     .then((response) => response.json()) // 1. Recibimos respuesta y la convertimos a JSON
     .then((data) => {
       console.log(data); // 2. Vemos los datos por consola (opcional, para debug)
@@ -10,4 +10,5 @@ async function getDataArtist() {
       console.error("Error al obtener los datos:", error); // Gestión de errores
     });
 }
-export default getDataArtist
+
+export default getDataGallery

@@ -3,11 +3,11 @@ function Artist({ artistProp, onDelete }) {
     return (
         <div className="artist-card">
             <div className="artist-image">
-                <img src={image} alt="Artistas" className="artist-image"/>
+                <img src={image} alt="Artistas" />
             </div>
             <div className="artist-body">
                 <p>{id}</p>
-                <p className="artist-name">{name}</p>
+                <p>{name}</p>
                 <p>{description}</p>
                 <p>{age}</p>
             </div>
