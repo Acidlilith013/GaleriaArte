@@ -23,6 +23,3 @@ Es un espacio dedicado a  exhibir y promover obras visuales, pinturas, escultura
     - Sculpture {}
 - Servicios  
     - Service {}
-
-
-.
